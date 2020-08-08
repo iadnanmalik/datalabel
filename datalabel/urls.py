@@ -14,8 +14,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-
+from django.urls import path,include
+from accounts import views
+from sentencesemantic import views
+import accounts
+import sentencesemantic
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('homeForm/', accounts.views.homeForm,name='homeForm'),
+    path('',accounts.views.home, name='home'),
+    path('sentencesemantic/',sentencesemantic.views.sentencesemantic, name='sentencesemantic'),
+    path('sentences/<int:oid>/',sentencesemantic.views.sentences,name='sentences')
 ]

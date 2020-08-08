@@ -1,0 +1,43 @@
+{%extends 'index.html' %}{%block content%} {%load static%}
+<link href="{% static 'css/question-page.css' %}" rel="stylesheet">
+<div class="container mt-5">
+    <div class="d-flex justify-content-center row">
+        <div class="col-md-10 col-lg-10">
+            <div class="border">
+                <div class="question bg-white p-3 border-bottom">
+                    <div class="d-flex flex-row justify-content-between align-items-center mcq">
+                        <h4>Data Labeling</h4><span></span>
+                    </div>
+                </div>
+                <div class="question bg-white p-3 border-bottom">
+                    <div class="d-flex flex-row align-items-center question-title">
+                        <h3 class="text-danger">Sentence:</h3>
+                        <br>
+                        <br>
+                        <br>
+                        <h5 class="mt-1 ml-2">{{object.sentence}}</h5>
+                    </div>
+                <p>
+                Select a Label:
+                </p>
+             <form action="{%url 'sentences' object.id %}" method="post" name="login">
+			  {% csrf_token %}
+          
+                    {%for label in labels.all%}
+                    
+                    <div class="ans ml-2">
+                        <label class="radio"> <input type="radio" name="labels" value="{{label.name}}"> <span>{{label.name}}</span>
+                        </label>
+                    </div>
+                    {%endfor%}
+                <br>
+                <button class=" btn btn-primary btn-success" style="  margin-left:250px;  width:20%;" type="submit">Next<i class="fa fa-angle-right ml-2"></i></button></div>
+          
+                  </div>
+          </form>  
+        </div>
+    </div>
+</div>
+<br>
+<br><br><br><br>
+{% endblock %}
