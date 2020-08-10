@@ -1,0 +1,116 @@
+
+ {%load static%}
+
+
+<head>
+ <!-- Bootstrap core CSS -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/modern-business.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        function GetSelectedText () {
+            var range=''
+            if (window.getSelection) {  // all browsers, except IE before version 9
+                range = window.getSelection ();                                        
+                alert (range.toString ());
+                $('#myModal').modal('show')
+                $('<p>' + range.toString() + '</p>').appendTo('#exampleModalLabel');
+            } 
+            else {
+                if (document.selection.createRange) { // Internet Explorer
+                    range = document.selection.createRange ();
+                    alert (range.text);
+                    $('#myModal').modal(options)
+            
+                }
+            }
+        }
+
+      </script>
+       
+</head>
+<body>
+
+<div class="container">   
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" >
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+       <form action="{%url 'words' object.id %}" method="post" name="words">
+			  {% csrf_token %}
+            
+      <div class="modal-body">
+          {%for label in labels.all%}
+                    
+                    <div class="ans ml-2">
+                        <label class="radio"> <input type="radio" name="labels" value="{{label.name}}"> <span>{{label.name}}</span>
+                        </label>
+                    </div>
+                    {%endfor%}
+                  
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+         <button class=" btn btn-primary btn-success" style="  margin-left:250px;  width:20%;" type="submit">Next<i class="fa fa-angle-right ml-2"></i></button></div>
+          
+          
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+    Select some text!
+<link href="{% static 'css/question-page.css' %}" rel="stylesheet">
+<div class="container mt-5">
+    <div class="d-flex justify-content-center row">
+        <div class="col-md-10 col-lg-10">
+            <div class="border">
+                <div class="question bg-white p-3 border-bottom">
+                    <div class="d-flex flex-row justify-content-between align-items-center mcq">
+                        <h4>Words Labeling</h4><span style="color:blue">Instructions: Select Text/Word to Label it</span>
+                    </div>
+                </div>
+                <div class="question bg-white p-3 border-bottom">
+                    <div class="d-flex flex-row align-items-center question-title">
+                        <h4 class="text-info">Sentence:</h4>
+                        <br>
+                        <br>
+                        <br>
+                        <h5 class="mt-1 ml-2" style="border-style:ridge;  border-bottom: 2px solid info;  border-top-style: none;border-left-style: none;border-right-style: none;">{{object.sentence}}</h5>
+                    </div>
+                    <br>
+
+                <p>
+                Select label:
+                </p>
+                    <div class="row">
+                    </div>
+                <br>
+                <button class=" btn btn-primary btn-success" style="  margin-left:250px;  width:20%;" onclick="GetSelectedText ()" >Label Text<i class="fa fa-angle-right ml-2"></i></button></div>
+          
+                <button class=" btn btn-primary btn-success" style="  margin-left:250px;  width:20%;" type="submit">Next<i class="fa fa-angle-right ml-2"></i></button></div>
+          
+                  </div>
+         
+        </div>
+    </div>
+   
+</div>
+</body>

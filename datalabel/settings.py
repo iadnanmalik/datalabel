@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'accounts.apps.AccountsConfig',
     'sentencesemantic.apps.SentencesemanticConfig',
+    'WordSemantic.apps.WordsemanticConfig',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',

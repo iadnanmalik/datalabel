@@ -9,7 +9,8 @@ from sentencesemantic import views
 def home(request):   
 
     return render(request, 'accounts/home.html')
-
+def redirectview(request):
+    return render(request,'accounts/redirectview.html' )
 def homeForm(request):
     if request.method=='POST':
         if request.POST['name']  and request.POST['email'] and request.POST['gender'] :
@@ -22,10 +23,10 @@ def homeForm(request):
                 account.save()
                 account=Account.objects
                 
-                return redirect('sentencesemantic')
+                return redirect('redirectview')
 
         else:
-            return render(request,'accounts/homeForm.html', {'error':'Please Fill all the information'})
+            return render(request,'accounts/homeForm.html', {'error':'Error: Please Fill all the information'})
             
         return render(request, 'accounts/homeForm.html')
     else:

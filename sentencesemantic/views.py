@@ -38,9 +38,4 @@ def sentences(request,oid):
         detail.username=finalname
         detail.save()
         return redirect('sentencesemantic')
-  
-def changeFlag(request,sid):
-    detailblog= get_object_or_404(SentenceSemantic,pk=sid)
-    detailblog.flag=True
-    detailblog.save()
-    return render(request, 'sentencesemantic/homepage.html')
+ 

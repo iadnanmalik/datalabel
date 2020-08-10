@@ -18,11 +18,16 @@ from django.urls import path,include
 from accounts import views
 from sentencesemantic import views
 import accounts
+from WordSemantic import views
 import sentencesemantic
+import WordSemantic
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('homeForm/', accounts.views.homeForm,name='homeForm'),
     path('',accounts.views.home, name='home'),
     path('sentencesemantic/',sentencesemantic.views.sentencesemantic, name='sentencesemantic'),
-    path('sentences/<int:oid>/',sentencesemantic.views.sentences,name='sentences')
+    path('sentences/<int:oid>/',sentencesemantic.views.sentences,name='sentences'),
+    path('words/<int:oid>/',WordSemantic.views.words,name='words'),
+    path('wordsemantic/',WordSemantic.views.wordsemantic, name='wordsemantic'),
+    path('redirectview', accounts.views.redirectview,name='redirectview')
 ]

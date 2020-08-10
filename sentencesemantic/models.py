@@ -7,9 +7,9 @@ class Label(models.Model):
         return self.name
 
 class SentenceSemantic(models.Model):
-    sentence =models.CharField(max_length=1000)
+    sentence =models.CharField(max_length=100000)
     flag= models.BooleanField(default=0)
-    labels = models.CharField(max_length=25)
+    labels = models.CharField(max_length=50)
     username= models.CharField(max_length=25)
     def __str__(self):
         return self.sentence

@@ -1,0 +1,44 @@
+{%extends 'index.html' %} {%load static%}
+
+{%block content%}
+<!-- List group -->
+<div class="container mt-5">
+    <div class="d-flex justify-content-center row">
+        <div class="col-md-8 col-lg-8">
+        <br>
+            	<h3 class="wv-heading--subtitle justify-content-center" style="margin-left:100px;">
+	Select the Data Labeling Type!
+    </h3>
+    <br>
+            <div class="list-group">
+            <a href="{% url 'sentencesemantic'%}" class="list-group-item list-group-item-action flex-column align-items-start list-group-item-light ">
+                <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Sentence Labeling</h5>
+                <small></small>
+                </div>
+                <p class="mb-1">Label a complete sentence according to what you feel about that sentence</p>
+                <small></small>
+            </a>
+            <a href="{% url 'wordsemantic'%}" class="list-group-item list-group-item-action flex-column align-items-start list-group-item-light">
+                <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Entity Annotation/ Word by Word Labeling</h5>
+                <small class="text-muted"></small>
+                </div>
+                <p class="mb-1">Label Each Sentence Word by Word on the basis of language used in the sentences</p>
+                <small class="text-muted"></small>
+            </a>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+<br>            </div>
+        </div>
+    </div>
+</div>
+            
+{% endblock %}
