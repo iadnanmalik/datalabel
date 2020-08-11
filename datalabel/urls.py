@@ -27,7 +27,8 @@ urlpatterns = [
     path('',accounts.views.home, name='home'),
     path('sentencesemantic/',sentencesemantic.views.sentencesemantic, name='sentencesemantic'),
     path('sentences/<int:oid>/',sentencesemantic.views.sentences,name='sentences'),
-    path('words/<int:oid>/',WordSemantic.views.words,name='words'),
+    path('words/',WordSemantic.views.words,name='words'),
+    path('next_sentence/',WordSemantic.views.next_sentence,name='next_sentence'),
     path('wordsemantic/',WordSemantic.views.wordsemantic, name='wordsemantic'),
     path('redirectview', accounts.views.redirectview,name='redirectview')
 ]

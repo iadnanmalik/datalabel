@@ -13,24 +13,115 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <script type="text/javascript">
+        function insert(str, index, value) {
+            return str.substr(0, index) + value + str.substr(index);
+        }
         function GetSelectedText () {
+            var words=[];
+            var sentence = "{{object.sentence}}"
+            console.log(sentence);
             var range=''
             if (window.getSelection) {  // all browsers, except IE before version 9
                 range = window.getSelection ();                                        
-                alert (range.toString ());
-                $('#myModal').modal('show')
-                $('<p>' + range.toString() + '</p>').appendTo('#exampleModalLabel');
-            } 
+                var storedNames = JSON.parse(localStorage.getItem("words"));
+            if(sentence.includes(range.toString()) && range.toString()!='')
+                {
+                    words.push(range.toString());
+                if(storedNames){
+                    var i;
+                    for(i=0;i<storedNames.length;i++){
+                        words.push(storedNames[i]);
+                    }
+                }
+                    localStorage.setItem("words", JSON.stringify(words));
+
+                    
+                console.log(words)
+                    $('#myModal').modal('show')
+                    $('<span style="font-weight:bold">' + range.toString() + '</span>').appendTo('#exampleModalLabel');
+                    
+                }
+                else{
+                    alert("Please select the word from the sentence")
+                }
+            }
+            
             else {
                 if (document.selection.createRange) { // Internet Explorer
                     range = document.selection.createRange ();
                     alert (range.text);
                     $('#myModal').modal(options)
-            
+                    
+                
                 }
             }
         }
+        function GetSavedText (){
+           
+            var storedNames = JSON.parse(localStorage.getItem("words"));
+            var storedLabels= JSON.parse(localStorage.getItem("labels"));
+            var sentence= "{{object.sentence}}";
+                
+            if(storedNames)
+            {
+                
+                var i;
+                for(i=0;i<storedNames.length;i++)
+                {
+                var firstword= storedNames[i];
+                var firstlabel=storedLabels[i];
+                var index= sentence.indexOf(firstword);
+                index+= firstword.length
+                firstlabel= insert(firstlabel,0,"<");
+                firstlabel=insert(firstlabel,firstlabel.length,">");
+                sentence= insert(sentence,index,firstlabel)
 
+                }
+                //
+            }
+
+            localStorage.clear();
+            console.log(storedNames)
+            console.log(storedLabels)
+            console.log(sentence)
+            var oid="{{object.id}}";
+            console.log(oid)
+            $.ajax({
+                url: "{% url 'words' %}",
+                type: "POST",
+                dataType: "json",
+                data: {
+                    sentence: sentence,
+                    oid:oid,
+                    csrfmiddlewaretoken: '{{ csrf_token }}'
+                    },
+                
+            });
+        }
+        function GetSelectedLabels(){
+                var labels=[];
+                var radioSelect=$("input[name='labels']:checked").val();
+                if(radioSelect)
+                {
+                var storedLabels = JSON.parse(localStorage.getItem("labels"));
+                
+                labels.push(radioSelect);
+                if(storedLabels){
+                  var i;
+                  for(i=0;i<storedLabels.length;i++){
+                    labels.push(storedLabels[i]);
+                  }
+                }
+                localStorage.setItem("labels", JSON.stringify(labels));
+                console.log(labels)
+                }
+                else{
+                    var storedNames= JSON.parse(localStorage.getItem("words"));
+                    storedNames.pop()
+                    localStorage.setItem("words", JSON.stringify(storedNames));    
+                    alert('Please select a label')
+                }
+        }
       </script>
        
 </head>
@@ -47,13 +138,13 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h4 class="modal-title" id="exampleModalLabel">Select the suitable Label<br/>Word(s) Selected: </h4>
+        
+        
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-       <form action="{%url 'words' object.id %}" method="post" name="words">
-			  {% csrf_token %}
             
       <div class="modal-body">
           {%for label in labels.all%}
@@ -66,12 +157,10 @@
                   
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-         <button class=" btn btn-primary btn-success" style="  margin-left:250px;  width:20%;" type="submit">Next<i class="fa fa-angle-right ml-2"></i></button></div>
+       <button class=" btn btn-primary btn-success" id="modalNext" style="  margin-left:250px;  width:20%;" data-dismiss="modal" onclick="GetSelectedLabels ()">Next<i class="fa fa-angle-right ml-2"></i></button></div>
           
           
       </div>
-      </form>
     </div>
   </div>
 </div>
@@ -104,11 +193,15 @@
                     </div>
                 <br>
                 <button class=" btn btn-primary btn-success" style="  margin-left:250px;  width:20%;" onclick="GetSelectedText ()" >Label Text<i class="fa fa-angle-right ml-2"></i></button></div>
-          
-                <button class=" btn btn-primary btn-success" style="  margin-left:250px;  width:20%;" type="submit">Next<i class="fa fa-angle-right ml-2"></i></button></div>
-          
+                <button class=" btn btn-primary btn-success">
+                <a href="javascript:{document.getElementById('next_sentence').submit()}" onclick="GetSavedText ()">Next Sentence </a></li>
+
+                                <form id="next_sentence" method="POST" action="{% url 'next_sentence' %}">
+                                    {%csrf_token%}
+                                    <input type="hidden" />
+                                </form>
                   </div>
-         
+         </button>
         </div>
     </div>
    
