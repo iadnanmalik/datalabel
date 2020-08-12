@@ -1,198 +1,159 @@
 {%extends 'index.html' %}{%block content%} {%load static%}
 
 
-  <header>
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner" role="listbox">
-        <!-- Slide One - Set the background image for this slide in the line below -->
-        <div class="carousel-item active" style="background-image: url('/static/img/header-bg1.jpeg')">
-          <div class="carousel-caption d-none d-md-block">
-            <h3></h3>
-            <p>This is a description for the first slide.</p>
-          </div>
-        </div>      
-        <!-- Slide Two - Set the background image for this slide in the line below -->
-        <div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">
-          <div class="carousel-caption d-none d-md-block">
-            <h3>Second Slide</h3>
-            <p>This is a description for the second slide.</p>
-          </div>
-        </div>
-        <!-- Slide Three - Set the background image for this slide in the line below -->
-        <div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">
-          <div class="carousel-caption d-none d-md-block">
-            <h3>Third Slide</h3>
-            <p>This is a description for the third slide.</p>
-          </div>
-        </div>
-      </div>
-      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-  </header>
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex justify-cntent-center align-items-center">
+        <div id="heroCarousel" class="container carousel carousel-fade" data-ride="carousel">
 
-  <!-- Page Content -->
-  <div class="container">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+                <div class="carousel-container">
+                    <h2 class="animated fadeInDown">Welcome to <span id="logo1">AIM Lab</span></h2>
+                    <p class="animated fadeInUp">AIM Lab is an initiative. by FAST university Islamabad and is run under the supervision of DR.Omer Beg</p>
+                </div>
+            </div>
 
-    <h1 class="my-4">Welcome to Modern Business</h1>
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+                <div class="carousel-container">
+                    <h2 class="animated fadeInDown">Services </h2>
+                    <p class="animated fadeInUp">Our Services include provding the research facilities on Artifical Intelligence and Natural Language Processing</p>
+                    <a href="services.html" class="btn-get-started animated fadeInUp">Read More</a>
+                </div>
+            </div>
 
-    <!-- Marketing Icons Section -->
-    <div class="row">
-      <div class="col-lg-4 mb-4">
-        <div class="card h-100">
-          <h4 class="card-header">Card Title</h4>
-          <div class="card-body">
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Learn More</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 mb-4">
-        <div class="card h-100">
-          <h4 class="card-header">Card Title</h4>
-          <div class="card-body">
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ipsam eos, nam perspiciatis natus commodi similique totam consectetur praesentium molestiae atque exercitationem ut consequuntur, sed eveniet, magni nostrum sint fuga.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Learn More</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 mb-4">
-        <div class="card h-100">
-          <h4 class="card-header">Card Title</h4>
-          <div class="card-body">
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Learn More</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- /.row -->
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+                <div class="carousel-container">
+                    <h2 class="animated fadeInDown">Women Empowerment</h2>
+                    <p class="animated fadeInUp">Women Sitting at their homes can now join these training programs online and get started with their own sources of income.</p>
+                </div>
+            </div>
 
-    <!-- Portfolio Section -->
-    <h2>Portfolio Heading</h2>
 
-    <div class="row">
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#">Project One</a>
-            </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#">Project Two</a>
-            </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#">Project Three</a>
-            </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam, error quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque iure perspiciatis mollitia recusandae vero vel quam!</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#">Project Four</a>
-            </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#">Project Five</a>
-            </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#">Project Six</a>
-            </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- /.row -->
+            <a class="carousel-control-prev" href="#heroCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon bx bx-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#heroCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon bx bx-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
 
-    <!-- Features Section -->
-    <div class="row">
-      <div class="col-lg-6">
-        <h2>Modern Business Features</h2>
-        <p>The Modern Business template by Start Bootstrap includes:</p>
-        <ul>
-          <li>
-            <strong>Bootstrap v4</strong>
-          </li>
-          <li>jQuery</li>
-          <li>Font Awesome</li>
-          <li>Working contact form with validation</li>
-          <li>Unstyled page elements for easy customization</li>
-        </ul>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
-      </div>
-      <div class="col-lg-6">
-        <img class="img-fluid rounded" src="http://placehold.it/700x450" alt="">
-      </div>
-    </div>
-    <!-- /.row -->
+        </div>
+    </section>
+    <!-- End Hero -->
 
-    <hr>
+    <main id="main">
 
-    <!-- Call to Action Section -->
-    <div class="row mb-4">
-      <div class="col-md-8">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
-      </div>
-      <div class="col-md-4">
-        <a class="btn btn-lg btn-secondary btn-block" href="#">Call to Action</a>
-      </div>
-    </div>
+        <!-- ======= Services Section ======= -->
+        
+        <!-- ======= Facts Section ======= -->
+        <section class="facts section-bg" data-aos="fade-up">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Facts</h2>
+                </div>
 
-  </div>
-  <!-- /.container -->
+                <div class="row counters">
+
+                    <div class="col-lg-3 col-6 text-center">
+                        <span data-toggle="counter-up">105,232</span>
+                        <p>Overall Enrollments</p>
+                    </div>
+
+                    <div class="col-lg-3 col-6 text-center">
+                        <span data-toggle="counter-up">1,463</span>
+                        <p>Courses Offered</p>
+                    </div>
+
+                    <div class="col-lg-3 col-6 text-center">
+                        <span data-toggle="counter-up">521</span>
+                        <p>Total Teachers</p>
+                    </div>
+
+                    <div class="col-lg-3 col-6 text-center">
+                        <span data-toggle="counter-up">75</span>
+                        <p>Distinguished Sponsors</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <!-- ======= Features Section ======= -->
+        <section class="service-details">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                        <div class="card">
+                            <div class="card-img">
+                                <img src="{% static 'assets/img/service-details-1.jpg'%}" alt="...">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title"><a href="#">Our Mission</a></h5>
+                                <p class="card-text">AIM Labs  mission is to offer one million trainings to create strong workforce for a future shaped by the Fourth Industrial Wave, characterized by technology orientation, innovation and initiative. We can already see,
+                                    in our economy and others, </p>
+                                <div class="read-more"><a href="about.html"><i class="icofont-arrow-right"></i> Read More</a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                        <div class="card">
+                            <div class="card-img">
+                                <img src="{% static 'assets/img/service-details-3.jpg'%}" alt="...">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title"><a href="#">Our Vision</a></h5>
+                                <p class="card-text">Increase Number of individuals working as freelancers in the country, Number of hours worked per freelancer, Earnings per hour or per project for freelancers, Household incomes, Financial inclusion
+                                    IT exports ,Number of experts in specialized skills</p>
+                                <div class="read-more"><a href="#"><i class="icofont-arrow-right"></i> Read More</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <section class="services">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Our Proud Developer</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 col-lg-4 d-flex align-items-stretch" data-aos="fade-up">
+                        <div class="icon-box icon-box-cyani">
+
+                            <div class="card hovercard">
+                                <div class="cardheader">
+
+                                </div>
+                                <div class="avatar">
+                                    <img src="{% static 'assets/img/seoteacher.jpg'%}">
+                                </div>
+                                <div class="info">
+                                    <div class="desc">Adnan Ahmad <br></div>
+
+                                    <div class="title">
+                                        <br> <br> <a target="_blank" href="">Web Developer| Django Guru| Computer Scientist </a>
+                                    </div>
+                                </div>
+                                <div class="bottom">
+                                    <br> <a href="https://www.linkedin.com/in/adnan-ahmad-6b2b3b166/" class="btn-get-started animated fadeInUp">View Details</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+        </section>
+        <!-- End Services Section -->
+
+    </main>
+    <!-- End #main -->
 
 {%endblock%}

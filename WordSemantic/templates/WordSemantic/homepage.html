@@ -73,7 +73,7 @@
                 var index= sentence.indexOf(firstword);
                 index+= firstword.length
                 firstlabel= insert(firstlabel,0,"<");
-                firstlabel=insert(firstlabel,firstlabel.length,">");
+                firstlabel=insert(firstlabel,firstlabel.length,"> ");
                 sentence= insert(sentence,index,firstlabel)
 
                 }
@@ -126,12 +126,15 @@
        
 </head>
 <body>
+<nav class="navbar navbar-light bg-light">
+  <form class="form-inline" method="POST" action="{% url 'home' %}" >
+  {% csrf_token %}
+    <button class="btn btn-outline-success" type="submit">Home</button>
+  </form>
+</nav>
 
 <div class="container">   
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" >
-  Launch demo modal
-</button>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -165,7 +168,6 @@
   </div>
 </div>
 </div>
-    Select some text!
 <link href="{% static 'css/question-page.css' %}" rel="stylesheet">
 <div class="container mt-5">
     <div class="d-flex justify-content-center row">
@@ -186,22 +188,19 @@
                     </div>
                     <br>
 
-                <p>
-                Select label:
-                </p>
                     <div class="row">
                     </div>
                 <br>
-                <button class=" btn btn-primary btn-success" style="  margin-left:250px;  width:20%;" onclick="GetSelectedText ()" >Label Text<i class="fa fa-angle-right ml-2"></i></button></div>
-                <button class=" btn btn-primary btn-success">
-                <a href="javascript:{document.getElementById('next_sentence').submit()}" onclick="GetSavedText ()">Next Sentence </a></li>
-
+                <button class=" btn btn-primary btn-success" style="  margin-left:220px;  width:20%;" onclick="GetSelectedText ()" >Label Text<i class="fa fa-angle-right ml-2"></i></button></div>
+                
                                 <form id="next_sentence" method="POST" action="{% url 'next_sentence' %}">
                                     {%csrf_token%}
                                     <input type="hidden" />
+                                
+                                    <button  class="btn btn-success btn-lg" style="  margin-left:200px; margin-top:20px;  width:30%;" onclick="GetSavedText ()" type="submit" >Next Sentence<i class="fa fa-angle-right ml-2"></i></button></div>
+                        
                                 </form>
                   </div>
-         </button>
         </div>
     </div>
    

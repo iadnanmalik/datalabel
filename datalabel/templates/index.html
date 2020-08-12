@@ -3,61 +3,173 @@
 
 <head>
 {%load static%}
-    
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <title>Modern Business - Start Bootstrap Template</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <!-- Bootstrap core CSS -->
-  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <title>AIM Lab</title>
+    <meta content="" name="descriptison" content="AIM Lab, Web Development, Java Html, E-Commerce, Graphic Design,Autocad , Seo ">
+    <meta content="" name="keywords" content="HTML,CSS,BOOTSTRAP,JAVASCRIPT,PAKISTAN,TRAINING,WEB,SOFTWARE,ECOMERCE,GRAPHIC,ANIMATON">
+    <meta name="google-site-verification" content="AIM Lab, Web Development, Java Html, E-Commerce, Graphic Design,Autocad , Seo ">
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Custom styles for this template -->
-  <link href="{% static 'css/modern-business.css' %}" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
 
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/animate.css/animate.min.css'%}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/icofont/icofont.min.css'%}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css'%}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/venobox/venobox.css'%}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/owl.carousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/aos/aos.css'%}" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="{% static 'assets/css/style.css'%}" rel="stylesheet">
+    <link href="{% static 'assets/css/courses.css'%}" rel="stylesheet">
+
+    <!-- =======================================================
+  * Template Name: Moderna - v2.0.0
+  * Template URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  
+  ======================================================== -->
+    <script>
+        function myFunction() {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByTagName("li");
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.visibility = "visible";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
 </head>
 
 <body>
 
-  <!-- Navigation -->
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="{% url 'home'%}">AIM Lab</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'homeForm'%}">Data Labeling Portal</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="services.html">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  
-        {%block content%} {%endblock%}
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top header-transparent">
+        <div class="container">
 
-  <!-- Footer -->
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; AIM Lab 2020</p>
-    </div>
-    <!-- /.container -->
-  </footer>
+            <div class="logo float-left">
+                <h1 class="text-light"><a href="{%url 'home'%}"><span>AIM Lab</span></a></h1>
+                <!-- Uncomment below if you prefer to use an image logo -->
+                <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+            </div>
 
-  <!-- Bootstrap core JavaScript -->
- <link href="{% static 'css/swiper.min.css' %}">
-  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
-  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+            <nav class="nav-menu float-right d-none d-lg-block">
+                <ul>
+                    <li class="active"><a href="{%url 'home'%}">Home</a></li>
+                    <li><a href="{%url 'homeForm'%}">Data Labeling Portal</a></li>
+
+                    
+                </ul>
+            </nav>
+            <!-- .nav-menu -->
+
+        </div>
+
+    </header>
+    <!-- End Header -->
+  {%block content%}
+  {% endblock %}
+    <!-- ======= Footer ======= -->
+    <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+
+        <div class="footer-newsletter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h4>Our Newsletter</h4>
+                        <p>Keep an update on what's happening in PNTS.&emsp;&emsp;&emsp;&emsp; &emsp; &emsp; &emsp; &emsp; Enter your Email</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <form action="" method="post">
+                            <input type="email" name="email"><input type="submit" value="Subscribe">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-4 col-md-8 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="index.html">Home</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="services.html">Courses</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="about.html">About us</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="blog.html">Blog</a></li>
+                        </ul>
+                    </div>
+
+
+                    <div class="col-lg-4 col-md-8 footer-contact">
+                        <h4>Contact Us</h4>
+                        <p>
+                            H-11 AK Brohi Road <br> Islamabad <br> Pakistan <br><br>
+                            <strong>Phone:</strong> +92 310 845 9271<br>
+                            <strong>Email:</strong> info@aimlab.com<br>
+                        </p>
+
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 footer-info">
+                        <h3>About <span> AIMS Lab</span></h3>
+                        <p>AIMS is Artificial Intelligence and Research Lab which is working on Natural Language Prcosessing and different fields of AI</p>
+                        <div class="social-links mt-3">
+                            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                            <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong><span>AIM Lab</span></strong>. All Rights Reserved
+            </div>
+
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <a href="" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="{% static 'assets/vendor/jquery/jquery.min.js'%}"></script>
+    <script src="{% static 'assets/vendor/waypoints/jquery.waypoints.min.js'%}"></script>
+    <script src="{% static 'assets/vendor/aos/aos.js'%}"></script>
+    <script src="{% static 'assets/vendor/venobox/venobox.min.js'%}"></script>
+    <script src="{% static 'assets/vendor/waypoints/jquery.waypoints.min.js'%}"></script>
+    <script src="{% static 'assets/vendor/counterup/counterup.min.js'%}"></script>
+    <script src="{% static 'assets/vendor/owl.carousel/owl.carousel.min.js'%}"></script>
+    <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js'%}"></script>
+    <script src="{% static 'assets/vendor/aos/aos.js'%}"></script>
+    <!-- Template Main JS File -->
+    <script src="{% static 'assets/js/main.js'%}"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
 </body>
 
