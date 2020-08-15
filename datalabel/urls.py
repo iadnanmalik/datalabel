@@ -19,8 +19,12 @@ from accounts import views
 from sentencesemantic import views
 import accounts
 from WordSemantic import views
+from audiorecord import views
 import sentencesemantic
 import WordSemantic
+import audiorecord
+from django.conf import settings
+from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('homeForm/', accounts.views.homeForm,name='homeForm'),
@@ -30,5 +34,9 @@ urlpatterns = [
     path('words/',WordSemantic.views.words,name='words'),
     path('next_sentence/',WordSemantic.views.next_sentence,name='next_sentence'),
     path('wordsemantic/',WordSemantic.views.wordsemantic, name='wordsemantic'),
+    path('audiorecord/',audiorecord.views.audiorecording, name='audiorecording'),
+    path('record_next_sentence/',audiorecord.views.record_next_sentence, name='record_next_sentence'),
+    
+    path('next_audio/',audiorecord.views.next_audio,name='next_audio'),
     path('redirectview', accounts.views.redirectview,name='redirectview')
-]
+]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

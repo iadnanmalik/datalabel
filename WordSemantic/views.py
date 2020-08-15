@@ -23,7 +23,9 @@ def words(request):
     print(sentence)
     print(oid)
     detail= get_object_or_404(WordSemantic,pk=oid)
-    detail.sentence=sentence
+    if(detail.sentence!=sentence):
+        detail.sentence=sentence
+        detail.flag=True
 
     #print(oid)
     accounts=Account.objects.all()
@@ -38,7 +40,7 @@ def words(request):
         finalname= str(accounts[len(accounts)-1].id) +'N'+name 
         
     detail.username=finalname
-    detail.flag=True
+
     detail.save()
     return HttpResponse('Redirecting')
 def next_sentence(request):

@@ -61,7 +61,7 @@
             var storedNames = JSON.parse(localStorage.getItem("words"));
             var storedLabels= JSON.parse(localStorage.getItem("labels"));
             var sentence= "{{object.sentence}}";
-                
+            localStorage.clear();  
             if(storedNames)
             {
                 
@@ -80,7 +80,6 @@
                 //
             }
 
-            localStorage.clear();
             console.log(storedNames)
             console.log(storedLabels)
             console.log(sentence)

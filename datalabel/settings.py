@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'sentencesemantic.apps.SentencesemanticConfig',
     'WordSemantic.apps.WordsemanticConfig',
+    'audiorecord.apps.AudiorecordConfig',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -132,4 +133,6 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT= os.path.join(BASE_DIR,'static')
 STATIC_URL = '/static/'
+MEDIA_ROOT=os.path.join(BASE_DIR,'media')
+MEDIA_URL='/media/'
 
