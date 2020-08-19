@@ -79,7 +79,7 @@
                 }
                 //
             }
-
+            
             console.log(storedNames)
             console.log(storedLabels)
             console.log(sentence)
@@ -121,10 +121,41 @@
                     alert('Please select a label')
                 }
         }
+        function ShowLabeled(){
+            var storedNames = JSON.parse(localStorage.getItem("words"));
+            var storedLabels= JSON.parse(localStorage.getItem("labels"));
+            var sentence= "{{object.sentence}}";
+            if(storedNames)
+            {
+                
+                var i;
+                for(i=0;i<storedNames.length;i++)
+                {
+                var firstword= storedNames[i];
+                var firstlabel=storedLabels[i];
+                var index= sentence.indexOf(firstword);
+                index+= firstword.length
+                firstlabel= insert(firstlabel,0,"<");
+                firstlabel=insert(firstlabel,firstlabel.length,"> ");
+                sentence= insert(sentence,index,firstlabel)
+
+                }
+                //
+            }
+            alert("The labeled sentence is "+sentence);
+        }
       </script>
        
 </head>
 <body>
+<form  method="POST" action="{% url 'redirectview' %}">
+                                    {%csrf_token%}
+                                    <input type="hidden" />
+                                
+   <button class="  btn-outline-dark animated fadeInUp" style="  float:left; border: 1px solid black;  width:10%; margin-left:30px;" type="submit" >Back to Labeling Type<i class="fa fa-angle-right ml-2"></i></button></div>
+                    
+                                </form>
+<br>
 
 <div class="container">   
 <!-- Button trigger modal -->
@@ -184,7 +215,12 @@
                     <div class="row">
                     </div>
                 <br>
+              <div class="row">
                 <button class=" btn-primary animated fadeInUp" style="  margin-left:220px;  width:20%;" onclick="GetSelectedText ()" >Label Text<i class="fa fa-angle-right ml-2"></i></button></div>
+              
+                <button class="  btn-outline-dark animated fadeInUp" style="  float:right; border: 1px solid black;  width:20%;" onclick="ShowLabeled()" >Show Labeled Sentence<i class="fa fa-angle-right ml-2"></i></button></div>
+              
+              </div>
                 
                                 <form id="next_sentence" method="POST" action="{% url 'next_sentence' %}">
                                     {%csrf_token%}

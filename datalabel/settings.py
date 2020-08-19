@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'sentencesemantic.apps.SentencesemanticConfig',
     'WordSemantic.apps.WordsemanticConfig',
     'audiorecord.apps.AudiorecordConfig',
+    'ImageLabel.apps.ImagelabelConfig',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',

@@ -12,28 +12,33 @@
                     
                                 </form>
 <br>
-
+   
 <div class="container mt-5">
     <div class="d-flex justify-content-center row">
         <div class="col-md-10 col-lg-10">
             <div class="border">
                 <div class="question bg-white p-3 border-bottom">
                     <div class="d-flex flex-row justify-content-between align-items-center mcq">
-                        <h4>Sentences Labeling</h4><span></span>
+                        <h4>Images Labeling</h4><span></span>
                     </div>
                 </div>
                 <div class="question bg-white p-3 border-bottom">
                     <div class="d-flex flex-row align-items-center question-title">
-                        <h4 class="text-danger">Sentence:</h4>
+                        <h4 class="text-danger">Image:</h4>
                         <br>
                         <br>
                         <br>
-                        <h5 class="mt-1 ml-2">{{object.sentence}}</h5>
+                        <div class="img"><img src="{{image.image.url}}" class="img-fluid" alt="Responsive image" style="min-height:300px;  width:40%; margin-left:50px;">
+
+</div>
+
+                        <h5 class="mt-1 ml-2"></h5>
                     </div>
+                    <br>
                 <p>
                 Select a Label:
                 </p>
-             <form action="{%url 'sentences' object.id %}" method="post" name="login">
+             <form action="{%url 'next_image' image.id %}" method="post" name="login">
 			  {% csrf_token %}
                     <div class="row">
                     {%for label in labels.all%}
@@ -55,4 +60,6 @@
 </div>
 <br>
 <br><br><br><br>
+
+
 {% endblock %}

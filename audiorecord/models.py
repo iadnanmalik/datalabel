@@ -7,7 +7,7 @@ class AudioSentence(models.Model):
     def __str__(self):
         return self.sentence
 class Audio(models.Model):
-    name =models.CharField(max_length=25)
+    name =models.CharField(max_length=100000)
     voice= models.FileField()
     def __str__(self):
         return self.name

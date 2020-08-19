@@ -20,6 +20,8 @@ from sentencesemantic import views
 import accounts
 from WordSemantic import views
 from audiorecord import views
+from ImageLabel import views
+import ImageLabel
 import sentencesemantic
 import WordSemantic
 import audiorecord
@@ -36,6 +38,8 @@ urlpatterns = [
     path('wordsemantic/',WordSemantic.views.wordsemantic, name='wordsemantic'),
     path('audiorecord/',audiorecord.views.audiorecording, name='audiorecording'),
     path('record_next_sentence/',audiorecord.views.record_next_sentence, name='record_next_sentence'),
+    path('imagelabel/',ImageLabel.views.imagelabel,name='imagelabel'),
+    path('next_image/<int:oid>/',ImageLabel.views.next_image,name='next_image'),
     
     path('next_audio/',audiorecord.views.next_audio,name='next_audio'),
     path('redirectview', accounts.views.redirectview,name='redirectview')
