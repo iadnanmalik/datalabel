@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = 'h#7@#onst(qa)yc$4humbvua_oma2!*196+e*)mif@ehljscas'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-
+DEBUG=True
 ALLOWED_HOSTS = ['*']
 
 
@@ -88,6 +88,13 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+#SECURE_HSTS_SECONDS = 30
+
+#SECURE_HSTS_INCLUDE_SUBDOMAINS =True
+#SECURE_SSL_REDIRECT =True
+#SESSION_COOKIE_SECURE =True
+#CSRF_COOKIE_SECURE=True
+#SECURE_HSTS_PRELOAD =True
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
