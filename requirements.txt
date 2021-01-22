@@ -1,15 +1,16 @@
 asgiref==3.3.1
 awsebcli==3.19.3
-botocore==1.19.57
+boto3==1.16.58
+botocore==1.19.58
 cement==2.8.2
 certifi==2020.12.5
 chardet==3.0.4
 colorama==0.4.3
 defusedxml==0.6.0
-diff-match-patch==20200713
 Django==3.1.5
 django-cleanup==5.1.0
 django-import-export==2.5.0
+django-storages==1.11.1
 et-xmlfile==1.0.1
 future==0.16.0
 gunicorn==20.0.4
@@ -28,6 +29,7 @@ python-dateutil==2.8.1
 pytz==2020.5
 PyYAML==5.3.1
 requests==2.24.0
+s3transfer==0.3.4
 semantic-version==2.5.0
 six==1.15.0
 sqlparse==0.4.1
