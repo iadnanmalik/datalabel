@@ -61,7 +61,7 @@
                 </button>
                  <p id="status" style="margin-top:20px;"></p>
 
-                <button type="button"  id="stopRecordingButton" onclick="enableAll()" disabled class="btn " aria-label="Left Align" data-toggle="tooltip" title="Stop Recording">
+                <button type="button"  id="stopRecordingButton" onclick="enableAll(); nextAudio();" disabled class="btn " aria-label="Left Align" data-toggle="tooltip" title="Stop Recording">
                 <span class="glyphicon glyphicon-stop" aria-hidden="true"></span>
                 </button>
                 <button type="button"  id="playButton"  disabled class="btn " aria-label="Left Align" data-toggle="tooltip" title="Play">
@@ -73,11 +73,12 @@
                   </div>
                 <br>
                 <div>
+
                  <form id="record_next_sentence" method="POST" action="{% url 'record_next_sentence' %}">
                                     {%csrf_token%}
                                     <input type="hidden" />
                                 
-                              <button class=" btn-outline-primary animated fadeInUp" style="  margin-left:200px;  width:20%;" id="nextButton"  onclick="nextAudio ()" disabled type="submit">Next Sentence<i class="fa fa-angle-right ml-2"></i></button></div>
+                              <button class=" btn-outline-primary animated fadeInUp" style="  margin-left:200px;  width:20%;" id="nextButton"   disabled type="submit">Next Sentence<i class="fa fa-angle-right ml-2"></i></button></div>
           
                                 </form>
                     </div>
@@ -271,16 +272,10 @@
                 method: 'POST',
                 data:  data,
                 processData: false,
-                contentType: false,
-                success: function(data){
-                    console.log("sucess")
-        
-                },
-                error:function ( thrownError){
-                    console.log(thrownError);
-                }
+                contentType: false
             });
-
+    console.log("sucess")
+        
         }
         function blobToFile(theBlob, fileName){
             //A Blob() is almost a File() - it's just missing the two properties below which we will add
