@@ -271,10 +271,16 @@
                 method: 'POST',
                 data:  data,
                 processData: false,
-                contentType: false
-            });
-    console.log("sucess")
+                contentType: false,
+                success: function(data){
+                    console.log("sucess")
         
+                },
+                error:function ( thrownError){
+                    console.log(thrownError);
+                }
+            });
+
         }
         function blobToFile(theBlob, fileName){
             //A Blob() is almost a File() - it's just missing the two properties below which we will add
