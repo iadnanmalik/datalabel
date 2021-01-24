@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 #SECRET_KEY = 'h#7@#onst(qa)yc$4humbvua_oma2!*196+e*)mif@ehljscas'
 SECRET_KEY = '8db621a5cf213729bcd4'
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = (os.environ.get('DEBUG_VALUE')=='True')
+DEBUG =False
 ALLOWED_HOSTS = ['*']
 
 
@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'import_export',
     'django.contrib.staticfiles',
-    'storages'
+    'storages',
+    'django_cleanup.apps.CleanupConfig',
 ]
 
 MIDDLEWARE = [
@@ -149,6 +150,7 @@ AWS_SECRET_ACCESS_KEY=os.environ.get('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME=os.environ.get('AWS_STORAGE_BUCKET_NAME')
 
 AWS_S3_FILE_OWERWRITE= False
+
 AWS_DEFAULT_ACL =None
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'

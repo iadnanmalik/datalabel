@@ -18,7 +18,7 @@ def sentencesemantic(request):
     for my_object in my_objects:
         print(my_object.sentence)
         return render(request, 'sentencesemantic/homepage.html',{'object': my_object,'labels':labels})
-    return redirect('home')
+    return redirect('nomore')
 def sentences(request,oid):
     if request.method=='POST':
         detail= get_object_or_404(SentenceSemantic,pk=oid)

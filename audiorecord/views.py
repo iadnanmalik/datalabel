@@ -10,6 +10,10 @@ from django.http import HttpResponse
 from django.core.files import File
 from django.http import HttpResponse
 
+
+def nomore(request):
+    return render(request,'audiorecord/nomore.html')
+
 def audiorecording(request):
     my_objects = AudioSentence.objects.all().filter(flag=0)
     accounts=Account.objects.all()
@@ -24,7 +28,8 @@ def audiorecording(request):
     
     for my_object in my_objects:
         return render(request, 'audiorecord/homepage.html',{'object': my_object,'name':finalname})
-    return redirect('home')
+    
+    return redirect('nomore')
 @csrf_exempt
 def next_audio(request):
     audio_file = request.FILES.get('recorded_audio')

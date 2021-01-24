@@ -14,7 +14,7 @@ def wordsemantic(request):
     labels= Label.objects
     for word in words:
          return render(request, 'WordSemantic/homepage.html',{'object': word,'labels':labels})
-    return redirect('home')
+    return redirect('nomore')
 @csrf_exempt
 def words(request):
 

@@ -40,7 +40,7 @@ urlpatterns = [
     path('record_next_sentence/',audiorecord.views.record_next_sentence, name='record_next_sentence'),
     path('imagelabel/',ImageLabel.views.imagelabel,name='imagelabel'),
     path('next_image/<int:oid>/',ImageLabel.views.next_image,name='next_image'),
-    
+    path('nomore/',audiorecord.views.nomore,name='nomore'),
     path('next_audio/',audiorecord.views.next_audio,name='next_audio'),
     path('redirectview', accounts.views.redirectview,name='redirectview')
 ]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
