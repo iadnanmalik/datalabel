@@ -26,7 +26,7 @@ martor==1.5.8
 odfpy==1.4.1
 openpyxl==3.0.6
 pathspec==0.5.9
-Pillow==8.1.0
+Pillow==9.0.0
 psycopg2==2.8.6
 python-dateutil==2.8.1
 pytz==2020.5
